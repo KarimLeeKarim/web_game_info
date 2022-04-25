@@ -11,3 +11,8 @@ export type Game = {
     release_date: string
     freetogame_profile_url: string
 }
+
+export type ErrorData = {
+    status: number;
+    data: Object;
+}

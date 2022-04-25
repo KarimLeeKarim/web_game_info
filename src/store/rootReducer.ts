@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import advertisementTabChangerSlice from './slices/advertisementTabChangerSlice';
+import getFullListGameSlice from './slices/getFullListGameSlice';
 
 export const rootReducer = combineReducers({
-    advertisementTabChangerSlice,
+    getFullListGameSlice,
 })
