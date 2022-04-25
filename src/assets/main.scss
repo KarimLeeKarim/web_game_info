@@ -1,0 +1,17 @@
+@import "./settings/reset";
+@import "./settings/typography";
+@import "./settings/mixin";
+// @import "pagination";
+// @import "item_list";
+// @import "input_container";
+// @import "loading";
+// @import "modal";
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}

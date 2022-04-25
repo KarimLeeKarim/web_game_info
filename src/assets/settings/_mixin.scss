@@ -1,0 +1,28 @@
+// @mixin custom_btn {
+//     border: 1px solid black;
+//     font-family: $smooch;
+//     background-color: #fff;
+//     cursor: pointer;
+//     padding: 0 10px;
+//       transition: .5s;
+//       &:hover{
+//           background-color: black;
+//           color:#fff
+//       }
+// }
+
+   
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 475px) { @content };  //600px, 37.5em
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };  //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 81.25em) { @content };  //1300px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };   //1800px
+    }
+}
