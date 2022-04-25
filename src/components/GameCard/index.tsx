@@ -1,14 +1,16 @@
-import React, { ReactElement } from "react";
-import { useParams } from "react-router-dom";
+import React, { ReactElement, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getSpecifiedGame } from '../../store/slices/specifiedGameSlice';
+import { useAppDispatch } from '../../store/store';
+import { GameCardRender } from './GameCard.render';
 
-export const GameCard: React.FC = ():ReactElement =>{
-    const { gameId } = useParams();
+export const GameCardContainer = (): ReactElement => {
+	const { gameId } = useParams();
+	const dispatch = useAppDispatch();
 
-      console.log(gameId);
-    return (
-        <div>
-            <p>Name</p>
-            <p>nese</p>
-        </div>
-    )
-}
+	useEffect(() => {
+		dispatch(getSpecifiedGame(gameId));
+	}, []);
+
+	return <GameCardRender />;
+};

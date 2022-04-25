@@ -13,16 +13,17 @@ const initialState: IInitialState = {
 	},
 };
 
-export const getFullListData = createAsyncThunk(
-	'games/getListGame',
-	async (undefined, { rejectWithValue }) => {
+export const getSpecifiedGame = createAsyncThunk(
+	'specifiedGame/getGame',
+	async (values: any, { rejectWithValue }) => {
 		try {
-			const response = await axios.get(`https://${API_HOST}/api/games`, {
+			const response = await axios.get(`https://${API_HOST}/api/game`, {
 				headers: {
 					'X-RapidAPI-Host': API_HOST,
 					'X-RapidAPI-Key': API_KEY,
 				},
-				params: {
+                params: {
+                    id: +values,
 					platform: 'browser',
 				},
 			});
@@ -36,8 +37,8 @@ export const getFullListData = createAsyncThunk(
 	},
 );
 
-const getFullListGameSlice = createSlice({
-	name: 'games',
+const specifiedGameSlice = createSlice({
+	name: 'specifiedGame',
 	initialState,
 	reducers: {
 		// Example(state, { payload }) {
@@ -45,14 +46,14 @@ const getFullListGameSlice = createSlice({
 		// },
 	},
 	extraReducers: reducerChanger => {
-		reducerChanger.addCase(getFullListData.pending, state => {
+		reducerChanger.addCase(getSpecifiedGame.pending, state => {
 			state.isLoading = true;
 		});
-		reducerChanger.addCase(getFullListData.fulfilled, (state, { payload }) => {
+		reducerChanger.addCase(getSpecifiedGame.fulfilled, (state, { payload }) => {
 			state.isLoading = false;
 			state.data = payload;
 		});
-		reducerChanger.addCase(getFullListData.rejected, (state, action: { payload: any }) => {
+		reducerChanger.addCase(getSpecifiedGame.rejected, (state, action: { payload: any }) => {
 			state.isLoading = false;
 			state.isError = true;
 			state.isErrorData = action.payload;
@@ -60,5 +61,5 @@ const getFullListGameSlice = createSlice({
 	},
 });
 
-// export const { Example } = getFullListGameSlice.actions;
-export default getFullListGameSlice.reducer;
+// export const { Example } = specifiedGameSlice.actions;
+export default specifiedGameSlice.reducer;

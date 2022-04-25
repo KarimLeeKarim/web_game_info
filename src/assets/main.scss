@@ -1,17 +1,37 @@
-@import "./settings/reset";
-@import "./settings/typography";
-@import "./settings/mixin";
-// @import "pagination";
-// @import "item_list";
-// @import "input_container";
-// @import "loading";
-// @import "modal";
-
+@import './settings/reset';
+@import './settings/typography';
+@import './settings/mixin';
+@import './_loading';
 
 #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	.content {
+		width: 300px;
+		&__images {
+			width: 250px;
+		}
+		&__info {
+			&__title {
+				color: yellow;
+			}
+			&__description {
+				color: green;
+			}
+			&__genre {
+				color: red;
+			}
+		}
+	}
 }
