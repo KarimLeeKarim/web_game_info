@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 export const Loading = (): ReactElement => {
 	return (
-		<div className="gooey">
+		<div className="loading">
 			<span className="dot"></span>
 			<div className="dots">
 				<span></span>

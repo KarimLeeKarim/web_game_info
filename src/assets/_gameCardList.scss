@@ -1,0 +1,53 @@
+.content {
+	box-sizing: border-box;
+	width: 200px;
+	margin: 15px 15px;
+	box-shadow: 1px 9px 17px -1px rgba(0, 0, 0, 0.47);
+	background-color: white;
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 180px;
+		color: black;
+
+		&__images {
+			width: 200px;
+		}
+		.text__content {
+			padding: 0 10px;
+			&__title {
+			}
+			&__description {
+				font-size: 13px;
+			}
+		}
+		.genre_platform {
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+			margin: 0 10px;
+			.genre {
+				font-size: 13px;
+				color: blue;
+                font-weight: 600;
+			}
+			.platform {
+				.platform1,
+				.platform2 {
+					width: 25px;
+					height: 20px;
+					border-radius: 20px;
+					padding: 2px;
+				}
+				.platform1 {
+					background-color: lightblue;
+					margin-right: 5px;
+				}
+				.platform2 {
+					background-color: lightsalmon;
+				}
+			}
+		}
+	}
+}

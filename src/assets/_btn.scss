@@ -1,0 +1,49 @@
+.customBtn {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	font-size: 15px;
+	color: black;
+	&:hover {
+		background-color: black;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+		.arrow {
+			position: relative;
+		}
+        .arrow-to-main {
+			position: relative;
+		}
+	}
+}
+.arrow {
+	transform: rotate(-45deg);
+	animation: 0.5s ease-in 2s infinite alternate slidein;
+	width: 15px;
+	height: 15px;
+	stroke-width: 10px;
+	margin-left: 5px;
+}
+
+.arrow-to-main {
+	transform: rotate(135deg);
+	animation: 0.5s ease-in 2s infinite alternate slidein;
+	width: 15px;
+	height: 15px;
+	stroke-width: 10px;
+	margin-left: 5px;
+}
+
+@keyframes slidein {
+	0% {
+		left: 0px;
+	}
+	50% {
+		left: 5px;
+	}
+	100% {
+		left: 10px;
+	}
+}

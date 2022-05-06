@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { API_HOST, API_KEY } from '../../components/GameListFolder/constants';
+import { API_HOST, API_KEY } from '../../constants/constants';
 import { IInitialState } from '../storeModel';
 
 const initialState: IInitialState = {

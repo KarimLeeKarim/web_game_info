@@ -1,7 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { valueText } from '../../constants/constants';
 import { useTypedSelector } from '../../store/store';
 import { GamePicture } from '../../types';
+import { Button } from '../Button/Button';
 import { Loading } from '../Loading/Loading';
 
 export const GameCardRender = (): ReactElement => {
@@ -26,11 +28,19 @@ export const GameCardRender = (): ReactElement => {
 					key={index}
 				/>
 			))}
-			<h2>Title: {data?.title}</h2>
-			<h2>Description: {data?.description}</h2>
-			<button>
-				<Link to={'/'}>Main Page</Link>
-			</button>
+			<p>
+				{valueText.title}: {data?.title}
+			</p>
+			<p>
+				{valueText.desc}: {data?.description}
+			</p>
+			<p>
+				{valueText.genre}: {data?.genre}
+			</p>
+			<p>
+				{valueText.releaseDate}: {data?.release_date}
+			</p>
+			<Button valueText={valueText.backToMain} route={'toMain'} />
 		</div>
 	);
 };

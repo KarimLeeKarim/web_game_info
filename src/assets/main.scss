@@ -2,36 +2,24 @@
 @import './settings/typography';
 @import './settings/mixin';
 @import './_loading';
+@import './_gameCardList';
+@import './_btn';
 
 #root {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to top, #000000, #2d1c1f, #553136, #82484c, #b06060);
+    font-family: $smooch;
 }
 
 .container {
-	width: 100%;
+	width: 70%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+}
 
-	.content {
-		width: 300px;
-		&__images {
-			width: 250px;
-		}
-		&__info {
-			&__title {
-				color: yellow;
-			}
-			&__description {
-				color: green;
-			}
-			&__genre {
-				color: red;
-			}
-		}
-	}
+.customBtn{
+    @include custom_btn
 }

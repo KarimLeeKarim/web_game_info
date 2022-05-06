@@ -32,6 +32,12 @@ module.exports = {
 				test: /\.(css)$/,
 				use: ['style-loader', 'css-loader'],
 			},
+			{
+				test: /\.(eot|woff|woff2|ttf|svg|png|jpg|ico)$/,
+				use: 'url-loader?limit=10000&name=[name]-[hash].[ext]',
+				include:  path.join(__dirname, 'src'),
+				exclude: /node_module/,
+			},
 		],
 	},
 	plugins: [

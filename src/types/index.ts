@@ -1,5 +1,5 @@
 export type Game = {
-	id: number;
+	id: string;
 	title: string;
 	thumbnail: string;
 	short_description: string;
@@ -21,3 +21,9 @@ export type GamePicture = {
 	id: number;
 	image: string;
 };
+
+export interface IButton {
+	id?: string;
+	valueText: string;
+	route: string;
+}
