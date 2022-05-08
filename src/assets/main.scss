@@ -6,20 +6,41 @@
 @import './_btn';
 
 #root {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(to top, #000000, #2d1c1f, #553136, #82484c, #b06060);
-    font-family: $smooch;
+	display: flex;
+	justify-content: center;
+	font-family: $smooch;
 }
 
 .container {
 	width: 70%;
+    height: auto;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
 
-.customBtn{
-    @include custom_btn
+.gameCard-container {
+	display: block;
+	width: 70%;
+    min-height: 100vh;
+    color: #fff;
+    padding: 20px 0;
+	&__customSlick {
+		width: 650px;
+		margin: auto;
+		height: 310px;
+		.slickImage {
+			width: 100%;
+			height: 300px;
+		}
+		.slick-dots {
+			bottom: -10px;
+		}
+	}
+    &__content{
+        margin-top: 20px;
+        .release{
+            margin-bottom: 20px;
+        }
+    }
 }

@@ -8,5 +8,6 @@ export const valueText = {
     genre: 'Genre',
     releaseDate: 'Release date',
     backToMain: 'Main page',
-    platform: 'Platform'
+    platform: 'Platform',
+    url: 'Url',
 }
